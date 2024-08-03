@@ -3,11 +3,13 @@
 ## Commit Message Format
 Each commit message consists of a header, an optional body, and an optional footer. The header has a specific format that includes a type, an optional scope, and a subject:
 
+```
 <type>(<scope>): <subject>
 <BLANK LINE>
 <body>
 <BLANK LINE>
 <footer>
+```
 
 
 ## Types
