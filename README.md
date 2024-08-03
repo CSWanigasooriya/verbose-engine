@@ -47,7 +47,7 @@ Use the body to explain the what and why of the commit, not the how.
 The footer should contain any information about Breaking Changes and is also the place to reference GitHub issues that this commit closes.
 
 ## Examples
-# Example 1: Adding a New Feature
+### Example 1: Adding a New Feature
 ```
 feat(controller): add user login endpoint
 
@@ -55,28 +55,28 @@ Implemented the user login endpoint using JWT authentication.
 This allows users to securely log into the application.
 ```
 
-# Example 2: Fixing a Bug
+### Example 2: Fixing a Bug
 ```
 fix(service): resolve null pointer exception in user service
 
 Fixed a bug where a null pointer exception was thrown in the user service
 when the user details were not found in the database.
 ```
-# Example 3: Updating Documentation
+### Example 3: Updating Documentation
 ```
 docs: update readme with setup instructions
 
 Added detailed setup instructions to the README file to help new developers
 get started with the project.
 ```
-# Example 4: Refactoring Code
+### Example 4: Refactoring Code
 ```
 refactor(entity): optimize user entity structure
 
 Refactored the User entity to improve performance and maintainability.
 Removed redundant fields and updated related service methods.
 ```
-# Example 5: Adding Tests
+### Example 5: Adding Tests
 ```
 test(controller): add unit tests for user controller
 
