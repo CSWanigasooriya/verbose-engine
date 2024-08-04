@@ -1,7 +1,7 @@
 plugins {
 	java
-	id("org.springframework.boot") version "3.3.2"
-	id("io.spring.dependency-management") version "1.1.6"
+	id("org.springframework.boot") version libs.versions.springBoot.get()
+	id("io.spring.dependency-management") version libs.versions.springDependencyManagement.get()
 }
 
 group = "com.engine"
@@ -9,7 +9,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(22)
+		languageVersion = JavaLanguageVersion.of(libs.versions.java.get().toInt())
 	}
 }
 
@@ -17,27 +17,29 @@ repositories {
 	mavenCentral()
 }
 
-extra["springCloudVersion"] = "2023.0.3"
+extra["springCloudVersion"] = libs.versions.springCloudVersion.get()
+extra["springBoot"] = libs.versions.springBoot.get()
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-data-redis")
-	implementation("org.springframework.boot:spring-boot-starter-security")
-	implementation("org.springframework.boot:spring-boot-starter-validation")
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
-	implementation("org.springframework.cloud:spring-cloud-starter-config")
-	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
-	runtimeOnly("com.h2database:h2")
-	runtimeOnly("org.postgresql:postgresql")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.springframework.security:spring-security-test")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	implementation(libs.springBootStarterActuator)
+	implementation(libs.springBootStarterDataJpa)
+	implementation(libs.springBootStarterDataRedis)
+	implementation(libs.springBootStarterSecurity)
+	implementation(libs.springBootStarterValidation)
+	implementation(libs.springBootStarterWeb)
+	implementation(libs.springCloudStarterCircuitbreakerResilience4j)
+	implementation(libs.springCloudStarterConfig)
+	implementation(libs.springCloudStarterNetflixEurekaClient)
+	runtimeOnly(libs.h2)
+	runtimeOnly(libs.postgresql)
+	testImplementation(libs.springBootStarterTest)
+	testImplementation(libs.springSecurityTest)
+	testImplementation(libs.junitPlatformLauncher)
 }
 
 dependencyManagement {
 	imports {
+		mavenBom("org.springframework.boot:spring-boot-dependencies:${property("springBoot")}")
 		mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
 	}
 }

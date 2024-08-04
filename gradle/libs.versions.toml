@@ -1,0 +1,25 @@
+[versions]
+springBoot = "3.3.2"
+springDependencyManagement = "1.1.6"
+springCloudVersion = "2023.0.3"
+java = "22"
+
+[libraries]
+springBootStarterActuator = { module = "org.springframework.boot:spring-boot-starter-actuator"}
+springBootStarterDataJpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+springBootStarterDataRedis = { module = "org.springframework.boot:spring-boot-starter-data-redis" }
+springBootStarterSecurity = { module = "org.springframework.boot:spring-boot-starter-security" }
+springBootStarterValidation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+springBootStarterWeb = { module = "org.springframework.boot:spring-boot-starter-web"}
+springCloudStarterCircuitbreakerResilience4j = { module = "org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j" }
+springCloudStarterConfig = { module = "org.springframework.cloud:spring-cloud-starter-config"}
+springCloudStarterNetflixEurekaClient = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client" }
+h2 = { module = "com.h2database:h2" }
+postgresql = { module = "org.postgresql:postgresql" }
+springBootStarterTest = { module = "org.springframework.boot:spring-boot-starter-test" }
+springSecurityTest = { module = "org.springframework.security:spring-security-test" }
+junitPlatformLauncher = { module = "org.junit.platform:junit-platform-launcher" }
+
+[plugins]
+springBoot = { id = "org.springframework.boot", version = "3.3.2" }
+dependencyManagement = { id = "io.spring.dependency-management", version = "1.1.6" }
