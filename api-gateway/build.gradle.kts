@@ -20,16 +20,12 @@ dependencyManagement {
 
 dependencies{
 	implementation(libs.springBootStarterActuator)
-	implementation(libs.springBootStarterDataJpa)
-	implementation(libs.springBootStarterSecurity)
-	implementation(libs.springBootStarterValidation)
+	implementation(libs.springBootStarterWebFlux)
 	implementation(libs.springCloudStarterGateway)
 	implementation(libs.springCloudStarterConfig)
 	implementation(libs.springCloudStarterNetflixEurekaClient)
 	testImplementation(libs.springBootStarterTest)
-	testImplementation(libs.springSecurityTest)
 	testImplementation(libs.junitPlatformLauncher)
-	runtimeOnly(libs.postgresql)
 }
 
 tasks.withType<Test> {

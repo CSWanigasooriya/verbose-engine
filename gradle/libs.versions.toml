@@ -4,6 +4,7 @@ springDependencyManagement = "1.1.6"
 springCloudVersion = "2023.0.3"
 java = "22"
 kotlin = "2.0.0"
+lombok = "1.18.34"
 
 [libraries]
 springBootStarterActuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
@@ -12,11 +13,13 @@ springBootStarterDataRedis = { module = "org.springframework.boot:spring-boot-st
 springBootStarterSecurity = { module = "org.springframework.boot:spring-boot-starter-security" }
 springBootStarterValidation = { module = "org.springframework.boot:spring-boot-starter-validation" }
 springBootStarterWeb = { module = "org.springframework.boot:spring-boot-starter-web" }
+springBootStarterWebFlux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
 springCloudStarterCircuitbreakerResilience4j = { module = "org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j" }
 springCloudStarterConfig = { module = "org.springframework.cloud:spring-cloud-starter-config" }
 springCloudStarterNetflixEurekaClient = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client" }
 springCloudStarterNetflixEurekaServer = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server" }
 springCloudStarterGateway = { module = "org.springframework.cloud:spring-cloud-starter-gateway" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 h2 = { module = "com.h2database:h2" }
 postgresql = { module = "org.postgresql:postgresql" }
 springBootStarterTest = { module = "org.springframework.boot:spring-boot-starter-test" }

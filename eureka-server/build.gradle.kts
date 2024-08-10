@@ -19,6 +19,7 @@ dependencyManagement {
 }
 
 dependencies{
+	implementation(libs.springBootStarterActuator)
 	implementation(libs.springCloudStarterNetflixEurekaServer)
 	testImplementation(libs.springBootStarterTest)
 	testImplementation(libs.springSecurityTest)
