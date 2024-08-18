@@ -1,6 +1,7 @@
 package com.engine.verbose.accountsmanager.advice;
 
 import com.engine.verbose.accountsmanager.exception.ResourceNotFoundException;
+import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,5 +32,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<String> handleEntityNotFoundException(EntityNotFoundException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(EntityExistsException.class)
+    public ResponseEntity<String> handleEntityExistsException(EntityExistsException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
     }
 }

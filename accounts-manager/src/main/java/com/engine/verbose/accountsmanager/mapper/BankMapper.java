@@ -12,6 +12,7 @@ public interface BankMapper {
     @Mapping(source = "instanceId", target = "bankId")
     BankDTO toBankDTO(Bank bank);
 
+    @Mapping(target = "instanceId", source = "bankId")
     Bank toBank(BankDTO bankDTO);
 
 }

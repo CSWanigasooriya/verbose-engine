@@ -5,6 +5,7 @@ import com.engine.verbose.accountsmanager.entity.Bank;
 import com.engine.verbose.accountsmanager.mapper.BankMapper;
 import com.engine.verbose.accountsmanager.repository.BankRepository;
 import com.engine.verbose.accountsmanager.util.BeanUtilsHelper;
+import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -26,7 +28,21 @@ public class BankService {
     }
 
     // Method to create a new bank
+    // Method to create a new bank
     public BankDTO createBank(BankDTO bankDTO) {
+        // Check if a bank with the same code already exists
+        Optional<Bank> existingBankByCode = bankRepository.findByCode(bankDTO.getCode());
+        if (existingBankByCode.isPresent()) {
+            throw new EntityExistsException("Bank with code %s already exists.".formatted(bankDTO.getCode()));
+        }
+
+        // Check if a bank with the same name already exists
+        Optional<Bank> existingBankByName = bankRepository.findByName(bankDTO.getName());
+        if (existingBankByName.isPresent()) {
+            throw new EntityExistsException("Bank with name %s already exists.".formatted(bankDTO.getName()));
+        }
+
+        // If no conflicts, save the new bank
         Bank bank = bankMapper.toBank(bankDTO);
         Bank savedBank = bankRepository.save(bank);
         return bankMapper.toBankDTO(savedBank);
