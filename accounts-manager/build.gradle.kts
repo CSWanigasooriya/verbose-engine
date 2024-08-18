@@ -18,9 +18,12 @@ dependencyManagement {
     }
 }
 
-dependencies{
+dependencies {
     implementation(project(":shared"))
     implementation(libs.lombok)
+    implementation(libs.mapstruct)
+    implementation(libs.lombokMapstructBinding)
+    annotationProcessor(libs.mapstructProcessor)
     annotationProcessor(libs.lombok)
     implementation(libs.springBootStarterActuator)
     implementation(libs.springBootStarterDataJpa)
