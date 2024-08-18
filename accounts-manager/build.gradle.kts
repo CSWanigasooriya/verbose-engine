@@ -23,18 +23,19 @@ dependencies {
     implementation(libs.lombok)
     implementation(libs.mapstruct)
     implementation(libs.lombokMapstructBinding)
-    annotationProcessor(libs.mapstructProcessor)
-    annotationProcessor(libs.lombok)
     implementation(libs.springBootStarterActuator)
     implementation(libs.springBootStarterDataJpa)
     implementation(libs.springBootStarterWeb)
     implementation(libs.springBootStarterSecurity)
     implementation(libs.springBootStarterValidation)
     implementation(libs.springCloudStarterNetflixEurekaClient)
+    implementation(libs.springdocOpenapiStarterWebmvcUi)
     testImplementation(libs.springBootStarterTest)
     testImplementation(libs.springSecurityTest)
     testImplementation(libs.junitPlatformLauncher)
     runtimeOnly(libs.postgresql)
+    annotationProcessor(libs.lombok)
+    annotationProcessor(libs.mapstructProcessor)
 }
 
 tasks.withType<JavaCompile> {

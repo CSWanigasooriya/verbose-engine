@@ -7,6 +7,7 @@ kotlin = "2.0.0"
 lombok = "1.18.34"
 mapstruct = "1.6.0"
 lombokMapstructBinding = "0.2.0"
+springdocOpenapi = "2.6.0"
 
 [libraries]
 springBootStarterActuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
@@ -22,6 +23,7 @@ springCloudStarterNetflixEurekaClient = { module = "org.springframework.cloud:sp
 springCloudStarterNetflixEurekaServer = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server" }
 springCloudStarterGateway = { module = "org.springframework.cloud:spring-cloud-starter-gateway" }
 mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "mapstruct" }
+springdocOpenapiStarterWebmvcUi = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdocOpenapi" }
 mapstructProcessor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct" }
 lombokMapstructBinding = { module = "org.projectlombok:lombok-mapstruct-binding", version.ref = "lombokMapstructBinding" }
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }

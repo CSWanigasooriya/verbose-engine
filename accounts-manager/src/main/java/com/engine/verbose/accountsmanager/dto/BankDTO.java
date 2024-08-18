@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -22,4 +23,8 @@ public class BankDTO {
     @NotNull
     @Size(min = 1, max = 100)
     private String name;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private List<BranchDTO> branches;
+
 }
