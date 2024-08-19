@@ -17,6 +17,15 @@ services:
     networks:
       - backend
 
+  accounts-manager:
+    build:
+      context: accounts-manager
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    networks:
+      - backend
+
   # Add other microservices similarly
 
   redis:
@@ -38,5 +47,5 @@ services:
       - backend
 
 networks:
-  verbose-engine-backend:
+  backend:
     driver: bridge

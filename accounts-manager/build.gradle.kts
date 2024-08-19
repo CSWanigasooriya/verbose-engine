@@ -45,3 +45,7 @@ tasks.withType<JavaCompile> {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.withType<War> {
+    destinationDirectory.set(layout.buildDirectory.dir("services"))
+}
